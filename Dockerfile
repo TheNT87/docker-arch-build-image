@@ -29,7 +29,7 @@ RUN pacman -Syyu && \
     pacman -Syu && \
     echo "#! /bin/bash\n set -e\n sudo /usr/sbin/sshd -D &\n exec \"\$@\"" > /home/user/entrypoint.sh && chmod a+x /home/user/entrypoint.sh
 
-    
+ADD etc/os-release /etc/os-release    
 
 #TODO dependencies
 ENV LANG C.UTF-8
